@@ -70,11 +70,13 @@ int main()
     int curr_time = 0;
     while (completed != n)
     {
+        printf(" %d[", curr_time);
         int i = 0;
         while (i < n)
         {
             if (p[i].at <= curr_time && p[i].completed == 0)
             {
+                printf("P%d]", p[i].pid);
                 p[i].tb--;
                 if (p[i].tb == 0)
                 {
@@ -89,7 +91,9 @@ int main()
             i++;
         }
         curr_time++;
+        printf("%d", curr_time);
     }
+    printf("\n");
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = 0; j < n - i - 1; j++)

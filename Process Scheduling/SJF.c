@@ -51,8 +51,10 @@ int main()
 
     int completed = 0;
     int curr_time = 0;
+    printf("Gannt Chart:\n");
     while (completed != n)
     {
+        printf(" %d[", curr_time);
         int i = 0;
         while (i < n)
         {
@@ -63,6 +65,7 @@ int main()
                 p[i].wt = p[i].tat - p[i].bt;
                 p[i].completed = 1;
                 completed++;
+                printf("P%d]", p[i].pid);
                 break;
             }
             i++;
@@ -71,7 +74,9 @@ int main()
             curr_time += p[i].bt;
         else
             curr_time++;
+        printf("%d ", curr_time);
     }
+    printf("\n");
 
     for (int i = 0; i < n - 1; i++)
     {

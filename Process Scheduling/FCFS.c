@@ -49,8 +49,10 @@ int main()
 
     // Calculating Completion time
     int sum = p[0].at;
+    printf("Gannt Chart:\n");
     for (int i = 0; i < n; i++)
     {
+        printf(" %d[", sum);
         if (sum < p[i].at)
             sum = p[i].at;
 
@@ -58,7 +60,9 @@ int main()
         p[i].tat = p[i].ct - p[i].at;
         p[i].wt = p[i].tat - p[i].bt;
         sum = p[i].ct;
+        printf("P%d]%d", p[i].pid, sum);
     }
+    printf("\n");
 
     display(p, n);
 }

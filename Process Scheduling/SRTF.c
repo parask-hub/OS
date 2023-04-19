@@ -70,10 +70,12 @@ int main()
 
     int completed = 0;
     int curr_time = 0;
+    printf("Gannt Chart : \n");
     while (completed != n)
     {
+        printf(" %d[", curr_time);
         int i = 0;
-        display(p, n);
+        // display(p, n);
         while (i < n)
         {
             if (p[i].at <= curr_time && p[i].completed == 0)
@@ -87,15 +89,17 @@ int main()
                     p[i].tat = p[i].ct - p[i].at;
                     p[i].wt = p[i].tat - p[i].bt;
                 }
+                printf("P%d]", p[i].pid);
                 sort_as_burst_time(p, n);
-                printf("\n\n");
+
                 break;
             }
             i++;
         }
         curr_time++;
+        printf("%d ", curr_time);
     }
-
+    printf("\n");
     for (int i = 0; i < n - 1; i++)
     {
         for (int j = 0; j < n - i - 1; j++)
