@@ -52,10 +52,10 @@ int main()
     printf("Gannt Chart:\n");
     for (int i = 0; i < n; i++)
     {
-        printf(" %d[", sum);
         if (sum < p[i].at)
             sum = p[i].at;
 
+        printf(" %d[", sum);
         p[i].ct = sum + p[i].bt;
         p[i].tat = p[i].ct - p[i].at;
         p[i].wt = p[i].tat - p[i].bt;
